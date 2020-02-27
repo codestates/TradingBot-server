@@ -14,5 +14,6 @@ axios.get('https://api.upbit.com/v1/market/all')
         }
     })
     .catch(error =>
-        console.log('error')
+        console.log('error exists')
     );
+
