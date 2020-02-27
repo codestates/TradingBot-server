@@ -4,6 +4,9 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 
+const signupRouter = require('./routes/signup');
+const loginRouter = require('./routes/login');
+
 const app = express();
 const port = 4000;
 
@@ -23,6 +26,9 @@ app.get('/', (req, res) => {
     res.status(200).send('Success');
     console.log(req.session);
 });
+
+app.use('/signup', signupRouter);
+app.use('/login', loginRouter)
 
 app.listen(port, () => 
 console.log(`Example app listening on port ${port}!`));
